@@ -67,5 +67,10 @@ public class User {
 	public boolean removeTodo(Todo todo){
 		return this.todos.remove(todo);
 	}
+	@Override
+	public String toString()
+	{
+		return "User [id=" + id + ", email=" + email + ", password=" + password + "]";
+	}
 	
 }

@@ -14,6 +14,7 @@ public class TodoDAO {
 	
 	public User getUserByEmail(String email){
 		String query = "SELECT u FROM User u WHERE u.email = " + email;
+		System.out.println(query);
 		return em.createQuery(query, User.class).getSingleResult();
 	}
 	
@@ -24,7 +25,7 @@ public class TodoDAO {
 	}
 	
 	public User createUser(User user){
-		System.out.println("in todoDAO" + user.getEmail());
+		System.out.println("in todoDAO " + user);
 		em.persist(user);
 			return user;
 		
