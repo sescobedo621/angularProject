@@ -22,16 +22,16 @@ public class TodoTest {
 		String str = "Junit is working fine";
 		assertEquals("Junit is working fine", str);
 	}
-//	
-//	@Test
-//	public void testCreateUser(){
-//		User user = new User("frank@gmail.com", "hello");
-//		System.out.println("this is the user variable "+ user);
-//		User test = todoDao.createUser(user);
-//		System.out.println("this is the test variable " + test);
-//		assertNotNull(test);
-//		//assertEquals(todoDao.createUser(user).getEmail(), user.getEmail());
-//	}
+	
+	@Test
+	public void testCreateUser(){
+		User user = new User("silverfox@gmail.com", "hello");
+		System.out.println("this is the user variable "+ user);
+		User test = todoDao.createUser(user);
+		System.out.println("this is the test variable " + test);
+		assertNotNull(test);
+		assertEquals(test.getEmail(), user.getEmail());
+	}
 	
 	@Test
 	public void testGetUser(){
