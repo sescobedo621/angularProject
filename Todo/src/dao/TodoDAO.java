@@ -13,7 +13,7 @@ public class TodoDAO {
 	private EntityManager em;
 	
 	public User getUserByEmail(String email){
-		String query = "SELECT u FROM User u WHERE u.email = " + email;
+		String query = "SELECT u FROM User u WHERE u.email = '" + email + "'";
 		System.out.println(query);
 		return em.createQuery(query, User.class).getSingleResult();
 	}

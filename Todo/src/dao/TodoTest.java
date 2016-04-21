@@ -1,16 +1,18 @@
 package dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import entities.User;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-@Configuration(value ="test-servlet.xml")
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations ={"test-servlet.xml"})
 public class TodoTest {
 	@Autowired
 	private TodoDAO todoDao;
