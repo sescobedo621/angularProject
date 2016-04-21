@@ -5,6 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import entities.Todo;
 import entities.User;
 
 @Transactional
@@ -29,6 +30,13 @@ public class TodoDAO {
 		em.persist(user);
 			return user;
 		
+	}
+
+	public Todo createTodo(Todo todo)
+	{
+		System.out.println("in create Todo dao " + todo.getTodo());
+		em.persist(todo);
+		return todo;
 	}
 	
 }

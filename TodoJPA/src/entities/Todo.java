@@ -21,7 +21,7 @@ public class Todo {
 	private int id;
 	private String todo;
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="users_id")
 	private User user;
 	@OneToMany(mappedBy = "todo", cascade = CascadeType.ALL)
 	private List<TodoItem> todoItems;
