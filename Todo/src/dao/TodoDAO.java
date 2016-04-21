@@ -26,7 +26,6 @@ public class TodoDAO {
 	}
 	
 	public User createUser(User user){
-		System.out.println("in todoDAO " + user);
 		em.persist(user);
 			return user;
 		
@@ -34,7 +33,6 @@ public class TodoDAO {
 
 	public Todo createTodo(Todo todo)
 	{
-		System.out.println("in create Todo dao " + todo.getTodo());
 		em.persist(todo);
 		return todo;
 	}

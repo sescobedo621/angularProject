@@ -29,9 +29,7 @@ public class TodoTest {
 	@Ignore
 	public void testCreateUser(){
 		User user = new User("silverfox@gmail.com", "hello");
-		System.out.println("this is the user variable "+ user);
 		User test = todoDao.createUser(user);
-		System.out.println("this is the test variable " + test);
 		assertNotNull(test);
 		assertEquals(test.getEmail(), user.getEmail());
 	}
@@ -39,14 +37,13 @@ public class TodoTest {
 	@Test
 	public void testGetUser(){
 		User user = todoDao.getUserByEmail("shelbyescobedo@gmail.com");
-		//System.out.println(user);
 		assertNotNull(user);
-		//assertEquals(user.getEmail(), "shelbyescobedo@gmail.com");
+		assertEquals(user.getEmail(), "shelbyescobedo@gmail.com");
 	}
 	@Test
+	@Ignore
 	public void testAddTodo(){
 		User user = todoDao.getUserByEmail("shelbyescobedo@gmail.com");
-		System.out.println(user.getId());
 		Todo todo = new Todo();
 		todo.setTodo("Grocery List");
 		todo.setUser(user);
