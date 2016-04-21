@@ -3,13 +3,17 @@ package dao;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 
 import entities.User;
 
+//@RunWith(SpringJUnit4ClassRunner.class)
+@Configuration(value ="test-servlet.xml")
 public class TodoTest {
-//	@Autowired
-	private TodoDAO todoDao = new TodoDAO();
+	@Autowired
+	private TodoDAO todoDao;
 	
 	@Test
 	public void testAdd() {
