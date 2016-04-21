@@ -16,10 +16,10 @@
 
 	<context:component-scan base-package="controllers" />
 <!-- lazy-init="true" -->
-	 <bean id="dao" class="data.NutriTracRESTDAO" />
+	<bean id="dao" class="dao.TodoDAO"/>
 	
 	<bean id="myEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="NutriPU" />
+		<property name="persistenceUnitName" value="todoPU" />
 		<property name="jpaPropertyMap"><props><prop key="eclipselink.weaving">false</prop></props></property>
 	</bean>
 	

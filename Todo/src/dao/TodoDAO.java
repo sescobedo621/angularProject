@@ -22,4 +22,12 @@ public class TodoDAO {
 		
 		return em.createQuery(query, User.class).getSingleResult();
 	}
+	
+	public User createUser(User user){
+		System.out.println("in todoDAO" + user.getEmail());
+		em.persist(user);
+			return user;
+		
+	}
+	
 }
