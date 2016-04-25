@@ -21,7 +21,7 @@ public class TodoItem {
 	private String todoItem;
 	private Date completed;
 	@ManyToOne
-	@JoinColumn(name="todo_id")
+	@JoinColumn(name="todos_id")
 	private Todo todo;
 	
 	public TodoItem(){

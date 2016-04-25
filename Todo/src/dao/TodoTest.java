@@ -3,6 +3,8 @@ package dao;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.util.Date;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import entities.Todo;
+import entities.TodoItem;
 import entities.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -50,5 +53,21 @@ public class TodoTest {
 		Todo test = todoDao.createTodo(todo);
 		assertNotNull(test);
 	}
+	@Test
+	public void testGetTodoById(){
+		Todo todo = todoDao.getTodoById(1);
+		assertEquals(todo.getTodo(), "Grocery List");
+	}
 	
+	@Test
+	public void testAddTodoItem(){
+		Todo todo = todoDao.getTodoById(1);
+		TodoItem item = new TodoItem();
+		item.setTodo(todo);
+		item.setTodoItem("milk");
+		//item.setCompleted(null);
+		TodoItem test = todoDao.createTodoItem(item);
+		
+		assertEquals(test.getTodoItem(), "milk");
+	}
 }
