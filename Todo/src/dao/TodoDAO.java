@@ -21,8 +21,8 @@ public class TodoDAO {
 	}
 	
 	public User getUserByEmailAndPassword(String email, String password){
-		String query = "SELECT u FROM User u WHERE u.email = " + email + " and u.password = " + password;
-		
+		String query = "SELECT u FROM User u WHERE u.email = '" + email + "' and u.password = '" + password +"'";
+		System.out.println(query);
 		return em.createQuery(query, User.class).getSingleResult();
 	}
 	
