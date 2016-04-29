@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import dao.TodoDAO;
 import entities.Todo;
+import entities.TodoItem;
 import entities.User;
 
 @Controller
@@ -41,10 +42,22 @@ public class TodoController {
 	public Todo getTodoList(@PathVariable("id") int id){
 		return todoDao.getTodoById(id);
 	}
-	
+	//creating a new todo
 	@ResponseBody
 	@RequestMapping("addTodoList")
 	public Todo addTodo(@RequestBody Todo todo){
 		return todoDao.createTodo(todo);
+	}
+	//get TodoItem
+	@ResponseBody
+	@RequestMapping("todoItem/{id}")
+	public TodoItem getTodoItem(@PathVariable("id") int id){
+		return todoDao.getTodoItemById(id);
+	}
+	//create TodoItem
+	@ResponseBody
+	@RequestMapping("addTodoItem")
+	public TodoItem addTodoItem(@RequestBody TodoItem item){
+		return todoDao.createTodoItem(item);
 	}
 }

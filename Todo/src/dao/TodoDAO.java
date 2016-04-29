@@ -47,4 +47,7 @@ public class TodoDAO {
 		return item;
 	}
 	
+	public TodoItem getTodoItemById(int id){
+		return em.find(TodoItem.class, id);
+	}
 }
