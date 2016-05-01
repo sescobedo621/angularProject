@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="todos")
 public class Todo {
@@ -22,8 +25,10 @@ public class Todo {
 	private String todo;
 	@ManyToOne
 	@JoinColumn(name="users_id")
+	@JsonBackReference(value="userTodos")
 	private User user;
 	@OneToMany(mappedBy = "todo", cascade = CascadeType.ALL)
+	@JsonManagedReference(value="todoItems")
 	private List<TodoItem> todoItems;
 	
 	public Todo(){

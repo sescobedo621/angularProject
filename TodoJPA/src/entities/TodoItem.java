@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="todo_items")
 public class TodoItem {
@@ -22,6 +24,7 @@ public class TodoItem {
 	private Date completed;
 	@ManyToOne
 	@JoinColumn(name="todos_id")
+	@JsonBackReference(value="todoItems")
 	private Todo todo;
 	
 	public TodoItem(){

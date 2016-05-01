@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name="users")
 public class User {
@@ -20,6 +22,7 @@ public class User {
 	private String email;
 	private String password;
 	@OneToMany(mappedBy= "user", cascade = CascadeType.ALL)
+	@JsonManagedReference(value="userTodos")
 	private List<Todo> todos;
 	public User(){
 		todos = new ArrayList();
