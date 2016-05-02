@@ -14,13 +14,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="todoApp">
 <h1>Todo List</h1>
+<div>
 <h3>Login</h3>
+<div ng-controller="myController">
 <form>
 	<input type="email" name="email" placeholder="email">
 	<input type="password" name="password" placeholder="password">
+	<input type="submit" value="Login">
 </form>
+</div>
 <script type="text/javascript" src="./javascript/app.js"></script>
 </body>
 </html>
