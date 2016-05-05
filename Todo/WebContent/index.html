@@ -18,12 +18,12 @@
 <h1>Todo List</h1>
 <h3>Login</h3>
 <div ng-controller="loginController">
-<form>
-	<input type="email" name="email" placeholder="email" ng-model="email">
-	<input type="password" name="password" placeholder="password" ng-model="password">
-	<input type="submit" value="Login" ng-click="">
-</form>
-<h1>{{email}}</h1>
+	<form>
+		<input type="email" name="email" placeholder="email" ng-model="user.email">
+		<input type="password" name="password" placeholder="password" ng-model="user.password">
+		<input type="submit" value="Login" ng-click="">
+	</form>
+<h1>{{user}}</h1>
 </div>
 <script type="text/javascript" src="./javascript/app.js"></script>
 </body>
