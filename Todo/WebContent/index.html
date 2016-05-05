@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Todo List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -11,7 +12,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 </head>
 <body ng-app="todoApp">
@@ -19,9 +19,9 @@
 <h3>Login</h3>
 <div ng-controller="loginController">
 	<form>
-		<input type="email" name="email" placeholder="email" ng-model="user.email">
-		<input type="password" name="password" placeholder="password" ng-model="user.password">
-		<input type="submit" value="Login" ng-click="">
+		<!-- <input type="email" name="email" placeholder="email" ng-model="user.email">
+		<input type="password" name="password" placeholder="password" ng-model="user.password"> -->
+		<input type="button" value="Ping" ng-click="getPing()">
 	</form>
 <h1>{{user}}</h1>
 </div>
