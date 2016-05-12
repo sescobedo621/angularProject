@@ -17,11 +17,11 @@
 <body ng-app="todoApp">
 <h1>Todo List</h1>
 <h3>Login</h3>
-<div ng-controller="loginController">
+<div ng-controller="loginController as login">
 	<form>
 		<!-- <input type="email" name="email" placeholder="email" ng-model="user.email">
 		<input type="password" name="password" placeholder="password" ng-model="user.password"> -->
-		<input type="button" value="Ping" ng-click="getPing()">
+		<input type="button" value="Ping" ng-click="login.getPing()">
 	</form>
 <h1>{{user}}</h1>
 </div>

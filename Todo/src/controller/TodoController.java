@@ -20,8 +20,9 @@ public class TodoController {
 	
 	@ResponseBody
 	@RequestMapping("ping")
-	public String ping(){
-		return "pong";
+	public Todo ping(){
+//		return "pong";
+		return new Todo();
 	}
 	//getting a user based on email and password
 	@ResponseBody
