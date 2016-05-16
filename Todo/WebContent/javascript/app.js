@@ -1,7 +1,7 @@
 var app = angular.module("todoApp", []);
 
 app.controller("loginController", function($scope, $http){
-	
+	var self = this;
 	
 	this.getUser = function(){
 		// console.log($scope.email);
@@ -12,7 +12,8 @@ app.controller("loginController", function($scope, $http){
 			console.log("in successCallback: ");
 			console.log(response);
 			if(response.status === 200){
-				console.log(response.data);
+				self.user = response.data;
+				//console.log(user.email);
 			}
 		}, function errorCallback(response){
 			console.log('in errorCallback: ');
