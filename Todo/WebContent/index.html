@@ -16,14 +16,21 @@
 </head>
 <body ng-app="todoApp">
 <h1>Todo List</h1>
-<h3>Login</h3>
 <div ng-controller="loginController as login">
+<div ng-hide="login.login">
+<h3>Login</h3>
+
 	<form>
 		<input type="email" name="email" placeholder="email" ng-model="email">
 		<input type="password" name="password" placeholder="password" ng-model="password">
 		<input type="button" value="Login" ng-click="login.getUser()">
 	</form>
-<h1>{{login.user.todos[0].todo}}</h1>
+</div>
+<div ng-repeat=" todolist in login.user.todos">
+<h3>{{todolist.todo}}</h3>
+<input type="button" value="Add Todo">
+</div>
+<input type="button" value="Add Todo List">
 </div>
 <script type="text/javascript" src="./javascript/app.js"></script>
 </body>
