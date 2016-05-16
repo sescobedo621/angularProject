@@ -4,7 +4,7 @@ app.controller("loginController", function($scope, $http){
 	var self = this;
 	self.login = false;
 	
-	this.getUser = function(){
+	self.getUser = function(){
 
 
 		var url = "rest/user/"+ $scope.email +"/"+ $scope.password;
@@ -22,7 +22,8 @@ app.controller("loginController", function($scope, $http){
 			console.log(response);
 		})
 		};
-	 this.getPing = function(){
+	 
+	 self.getPing = function(){
 		$http.get('rest/user/shelbyescobedo@gmail.com/banana', null, null).then(function successCallback(response) {
             console.log("in successCallback: ");
             console.log(response);
@@ -36,5 +37,7 @@ app.controller("loginController", function($scope, $http){
 		});
 
 	};
+
+	
 	});
 

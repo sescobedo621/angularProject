@@ -26,11 +26,17 @@
 		<input type="button" value="Login" ng-click="login.getUser()">
 	</form>
 </div>
-<div ng-repeat=" todolist in login.user.todos">
+
+<div ng-show="login.login" ng-repeat="todolist in login.user.todos">
 <h3>{{todolist.todo}}</h3>
+<div>
+	<ul  ng-repeat="todo in todolist.todoItems">
+		<li>{{todo.todoItem}}</li>
+	</ul>
+</div>
 <input type="button" value="Add Todo">
 </div>
-<input type="button" value="Add Todo List">
+<input ng-show="login.login" type="button" value="Add Todo List">
 </div>
 <script type="text/javascript" src="./javascript/app.js"></script>
 </body>
