@@ -3,8 +3,21 @@ var app = angular.module("todoApp", []);
 app.controller("loginController", function($scope, $http){
 	
 	
-	var getUser = function(){
-		var url = "/rest/user/"+ user.email +"/"+ user.password;
+	this.getUser = function(){
+		// console.log($scope.email);
+		// console.log($scope.password);
+		var url = "rest/user/"+ $scope.email +"/"+ $scope.password;
+		console.log(url);
+		$http.get(url, null, null).then(function successCallback(response){
+			console.log("in successCallback: ");
+			console.log(response);
+			if(response.status === 200){
+				console.log(response.data);
+			}
+		}, function errorCallback(response){
+			console.log('in errorCallback: ');
+			console.log(response);
+		})
 		};
 	 this.getPing = function(){
 	 // 	console.log("in getPing");
@@ -16,7 +29,7 @@ app.controller("loginController", function($scope, $http){
 		// 	}
 		// };
 		// xhr.send(null);
-		$http.get('rest/ping', null, null).then(function successCallback(response) {
+		$http.get('rest/user/shelbyescobedo@gmail.com/banana', null, null).then(function successCallback(response) {
             console.log("in successCallback: ");
             console.log(response);
             if(response.status === 200){
